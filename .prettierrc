@@ -4,11 +4,11 @@
     {
       "files": "*.astro",
       "options": {
-        "parser": "astro",
-        "trailingComma": "none",
-        "semi": false,
-        "singleQuote": true
+        "parser": "astro"
       }
     }
-  ]
+  ],
+  "trailingComma": "none",
+  "semi": false,
+  "singleQuote": true
 }

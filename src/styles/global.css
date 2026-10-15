@@ -1,40 +1,40 @@
-@import "tailwindcss";
+@import 'tailwindcss';
 
 @font-face {
-  font-family: "Recursive";
-  src: url("/fonts/recursive-black.woff2") format("woff2");
+  font-family: 'Recursive';
+  src: url('/fonts/recursive-black.woff2') format('woff2');
   font-weight: 900;
   font-style: normal;
   font-display: swap;
 }
 
 @font-face {
-  font-family: "Recursive";
-  src: url("/fonts/recursive-bold.woff2") format("woff2");
+  font-family: 'Recursive';
+  src: url('/fonts/recursive-bold.woff2') format('woff2');
   font-weight: 700;
   font-style: normal;
   font-display: swap;
 }
 
 @font-face {
-  font-family: "Fogtwo No5";
-  src: url("/fonts/fogtwo-no5.woff2") format("woff2");
+  font-family: 'Fogtwo No5';
+  src: url('/fonts/fogtwo-no5.woff2') format('woff2');
   font-weight: 400;
   font-style: normal;
   font-display: swap;
 }
 
 @font-face {
-  font-family: "Compagnon";
-  src: url("/fonts/compagnon-medium.woff2") format("woff2");
+  font-family: 'Compagnon';
+  src: url('/fonts/compagnon-medium.woff2') format('woff2');
   font-weight: 500;
   font-style: normal;
   font-display: swap;
 }
 
 @font-face {
-  font-family: "Noto Serif";
-  src: url("/fonts/noto-serif-italic.woff2") format("woff2");
+  font-family: 'Noto Serif';
+  src: url('/fonts/noto-serif-italic.woff2') format('woff2');
   font-weight: 400;
   font-style: italic;
   font-display: swap;
@@ -47,10 +47,10 @@
   --color-peach-soft: #fbcdb4;
   --color-paper: #fae9db;
 
-  --font-logo: "Recursive", "Arial Black", sans-serif;
-  --font-display: "Fogtwo No5", Georgia, serif;
-  --font-body: "Compagnon", "Courier New", monospace;
-  --font-quote: "Noto Serif", Georgia, serif;
+  --font-logo: 'Recursive', 'Arial Black', sans-serif;
+  --font-display: 'Fogtwo No5', Georgia, serif;
+  --font-body: 'Compagnon', 'Courier New', monospace;
+  --font-quote: 'Noto Serif', Georgia, serif;
 }
 
 html {

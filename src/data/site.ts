@@ -1,23 +1,23 @@
-const bookingEmail = "nashkiidairtas@proton.me";
+const bookingEmail = 'nashkiidairtas@proton.me'
 
 export const site = {
-  name: "Nashkii Dairtas",
-  role: "Musician & sound artist",
+  name: 'Nashkii Dairtas',
+  role: 'Musician & sound artist',
 
   bookingEmail: bookingEmail,
 
-  epkSite: "https://nashkiidairtas.github.io/epk",
+  epkSite: 'https://nashkiidairtas.github.io/epk',
 
-  github: "https://github.com/nashkiidairtas",
+  github: 'https://github.com/nashkiidairtas',
 
   socials: [
-    { label: "Instagram", href: "https://instagram.com/nashkiidairtas" },
-    { label: "YouTube", href: "https://youtube.com/@nashkiidairtas" },
-    { label: "Facebook", href: "https://www.facebook.com/1297446943458729" },
+    { label: 'Instagram', href: 'https://instagram.com/nashkiidairtas' },
+    { label: 'YouTube', href: 'https://youtube.com/@nashkiidairtas' },
+    { label: 'Facebook', href: 'https://www.facebook.com/1297446943458729' },
     // { label: "Spotify", href: "" },
-    { label: "SoundCloud", href: "https://soundcloud.com/nashkiidairtas" },
-    { label: "TikTok", href: "https://tiktok.com/nashkiidairtas" },
-    { label: "X", href: "https://x.com/nashkiidairtas" },
+    { label: 'SoundCloud', href: 'https://soundcloud.com/nashkiidairtas' },
+    { label: 'TikTok', href: 'https://tiktok.com/nashkiidairtas' },
+    { label: 'X', href: 'https://x.com/nashkiidairtas' }
   ],
 
   // Working genres (private): electro, electro house, progressive house,
@@ -36,19 +36,19 @@ export const site = {
   // TODO: replace with real releases as they come out
   releases: [
     {
-      no: "001",
-      title: "ID 001",
-      format: "Single",
-      year: "Forthcoming",
-      note: "Insert genre name or vibes here.",
+      no: '001',
+      title: 'ID 001',
+      format: 'Single',
+      year: 'Forthcoming',
+      note: 'Insert genre name or vibes here.'
     },
     {
-      no: "002",
-      title: "ID 002",
-      format: "Single",
-      year: "Forthcoming",
+      no: '002',
+      title: 'ID 002',
+      format: 'Single',
+      year: 'Forthcoming'
       // note: "Slow one, built from field recordings.",
-    },
+    }
     // {
     //   no: "003",
     //   title: "*****",
@@ -60,37 +60,37 @@ export const site = {
 
   // TODO: refine with the artist's own words
   shortBio:
-    "Nashkii Dairtas is a new electronic music project. Everything is made at home with simple, low-cost gear: drum machines, synths and recordings, including sounds recorded in nature. Some tracks are slow, others are made for dancing. Nothing has been released yet, the first tracks are still being finished.",
+    'Nashkii Dairtas is a new electronic music project. Everything is made at home with simple, low-cost gear: drum machines, synths and recordings, including sounds recorded in nature. Some tracks are slow, others are made for dancing. Nothing has been released yet, the first tracks are still being finished.',
 
   longBio: [
-    "Nashkii Dairtas is a new electronic music project. Everything is made at home with simple, low-cost gear: drum machines, synths, and field recordings, including sounds recorded in nature. The style mixes electro and house with occasional future bass and electropop. Arrangements stay simple. Some tracks are slow, others are made for dancing. Nothing has been released yet, the first tracks are still being finished.",
-    "The project is independent: no label, no fixed plan. Tracks get released online as they are done. Tak jumps to new ideas when something gets boring, and that keeps things moving. There is no schedule and no deadline, just recording and uploading.",
-    `For booking, press, remixes and collaborations, email ${bookingEmail}.`,
+    'Nashkii Dairtas is a new electronic music project. Everything is made at home with simple, low-cost gear: drum machines, synths, and field recordings, including sounds recorded in nature. The style mixes electro and house with occasional future bass and electropop. Arrangements stay simple. Some tracks are slow, others are made for dancing. Nothing has been released yet, the first tracks are still being finished.',
+    'The project is independent: no label, no fixed plan. Tracks get released online as they are done. Tak jumps to new ideas when something gets boring, and that keeps things moving. There is no schedule and no deadline, just recording and uploading.',
+    `For booking, press, remixes and collaborations, email ${bookingEmail}.`
   ],
 
   facts: [
-    { label: "Project", value: "Nashkii Dairtas" },
-    { label: "Music", value: "Electronic" },
+    { label: 'Project', value: 'Nashkii Dairtas' },
+    { label: 'Music', value: 'Electronic' },
     {
-      label: "Styles",
-      value: "Electro, house, future bass, electropop",
+      label: 'Styles',
+      value: 'Electro, house, future bass, electropop'
     },
     {
-      label: "Setup",
-      value: "Home studio, simple and low-cost gear",
+      label: 'Setup',
+      value: 'Home studio, simple and low-cost gear'
     },
     {
-      label: "Sources",
-      value: "Field recordings, nature sounds, synths, drum machines",
+      label: 'Sources',
+      value: 'Field recordings, nature sounds, synths, drum machines'
     },
     {
-      label: "Status",
-      value: "New and independent, nothing released yet",
+      label: 'Status',
+      value: 'New and independent, nothing released yet'
     },
-    { label: "Location", value: "Online only" },
+    { label: 'Location', value: 'Online only' },
     {
-      label: "Contact",
-      value: bookingEmail,
-    },
-  ],
-};
+      label: 'Contact',
+      value: bookingEmail
+    }
+  ]
+}
