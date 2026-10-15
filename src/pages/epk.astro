@@ -1,0 +1,191 @@
+---
+import { Image } from 'astro:assets'
+import { ArrowLeft, Download } from 'lucide-astro'
+import shift0 from '../assets/shift-0.webp'
+import shift2 from '../assets/shift-2.webp'
+import shift3 from '../assets/shift-3.webp'
+import shift6 from '../assets/shift-6.webp'
+import { site } from '../data/site'
+import Layout from '../layouts/Layout.astro'
+
+const press = [
+  {
+    img: shift0,
+    no: 0,
+    file: '/downloads/press/shift-0.webp',
+    caption: 'Open field, landscape'
+  },
+  {
+    img: shift2,
+    no: 2,
+    file: '/downloads/press/shift-2.webp',
+    caption: 'Light trails, landscape'
+  },
+  {
+    img: shift3,
+    no: 3,
+    file: '/downloads/press/shift-3.webp',
+    caption: 'City street, portrait'
+  },
+  {
+    img: shift6,
+    no: 6,
+    file: '/downloads/press/shift-6.webp',
+    caption: 'Studio desk, square'
+  }
+]
+---
+
+<Layout
+  title="EPK: Nashkii Dairtas"
+  description="Electronic press kit for Nashkii Dairtas."
+>
+  <style>
+    @media print {
+      body {
+        background: #fff;
+        color: #000;
+      }
+      a {
+        text-decoration: none;
+        color: inherit;
+      }
+      .epk-photo {
+        break-inside: avoid;
+      }
+    }
+  </style>
+
+  <main class="bg-paper text-plum">
+    <div class="mx-auto max-w-5xl px-5 pt-30 pb-14 md:px-10 md:pb-20">
+      <p class="inline-flex items-center text-xs tracking-[0.22em] uppercase">
+        <a
+          href="/"
+          class="inline-flex items-center gap-1.5 underline underline-offset-4 print:hidden"
+        >
+          <ArrowLeft class="size-3.5 mt-1" aria-hidden="true" />
+          Home
+        </a>
+        <span class="print:hidden mx-3" aria-hidden="true">
+          ·
+        </span>
+        Electronic press kit
+      </p>
+
+      <h1 class="font-display mt-4 text-[17vw] leading-[0.88] md:text-[6rem]">
+        {site.name}
+      </h1>
+      <p class="font-quote mt-4 max-w-2xl text-xl italic">{site.role}.</p>
+
+      <div class="mt-8 flex flex-wrap gap-4 print:hidden">
+        <a
+          href={`mailto:${site.bookingEmail}`}
+          class="inline-flex min-h-11 items-center bg-plum px-6 py-3 text-xs tracking-[0.22em] text-peach uppercase hover:bg-plum-deep"
+        >
+          Book: {site.bookingEmail}
+        </a>
+        <a
+          href="/downloads/nashkii-dairtas-press-kit.zip"
+          download
+          class="inline-flex min-h-11 items-center gap-2 border border-plum px-6 py-3 text-xs tracking-[0.22em] uppercase hover:bg-plum hover:text-peach"
+        >
+          <Download class="size-4 mt-0.5" aria-hidden="true" />
+          Download press kit (.zip)
+        </a>
+      </div>
+      <p class="mt-4 hidden text-sm print:block">
+        Booking: {site.bookingEmail}. Press kit: nashkiidairtas.github.io/epk
+      </p>
+
+      <section aria-label="Fact sheet" class="mt-14">
+        <h2 class="text-xs tracking-[0.22em] uppercase">Fact sheet</h2>
+        <dl class="mt-4 border-b border-plum/40">
+          {site.facts.map((f) => (
+            <div class="grid grid-cols-12 items-baseline gap-x-4 border-t border-plum/40 py-3">
+              <dt class="col-span-4 text-xs tracking-[0.18em] uppercase md:col-span-3">
+                {f.label}
+              </dt>
+              <dd class="col-span-8 text-sm md:col-span-9 md:text-base">
+                {f.value}
+              </dd>
+            </div>
+          ))}
+        </dl>
+      </section>
+
+      <section aria-label="Biography" class="mt-14">
+        <h2 class="text-xs tracking-[0.22em] uppercase">
+          Short bio (±60 words)
+        </h2>
+        <p class="mt-4 max-w-3xl text-base leading-relaxed md:text-lg">
+          {site.shortBio}
+        </p>
+
+        <h2 class="mt-10 text-xs tracking-[0.22em] uppercase">
+          Long bio (±200 words)
+        </h2>
+        <div class="mt-4 max-w-3xl space-y-5 text-base leading-relaxed md:text-lg">
+          {site.longBio.map((p) => (
+            <p>{p}</p>
+          ))}
+        </div>
+      </section>
+
+      <section aria-label="Selected releases" class="mt-14">
+        <h2 class="text-xs tracking-[0.22em] uppercase">Selected releases</h2>
+        <ol class="mt-4 border-b border-plum/40">
+          {site.releases.map((r) => (
+            <li class="grid grid-cols-12 items-baseline gap-x-4 border-t border-plum/40 py-4">
+              <p class="col-span-2 text-xs tracking-[0.22em] uppercase md:col-span-1">
+                {r.no}
+              </p>
+              <p class="font-display col-span-10 text-2xl md:col-span-6 md:text-3xl">
+                {r.title}
+              </p>
+              <p class="col-span-6 col-start-3 text-xs tracking-[0.18em] uppercase md:col-span-3 md:col-start-8">
+                {r.format}
+              </p>
+              <p class="col-span-6 text-right text-xs tracking-[0.18em] uppercase md:col-span-2 md:text-left">
+                {r.year}
+              </p>
+            </li>
+          ))}
+        </ol>
+      </section>
+
+      <section aria-label="Press photos" class="mt-14">
+        <h2 class="text-xs tracking-[0.22em] uppercase">
+          Press photos. Free to publish with credit “{site.name}”
+        </h2>
+        <div class="mt-4 grid grid-cols-12 gap-6">
+          {press.map((p) => (
+            <figure class="epk-photo col-span-12 md:col-span-6">
+              <Image
+                src={p.img}
+                alt={`Press photo: ${p.caption}`}
+                widths={[640, 1024]}
+                sizes="(max-width: 768px) 100vw, 40vw"
+                loading="lazy"
+                class="aspect-4/3 w-full object-cover"
+              />
+              <figcaption class="mt-2 flex flex-wrap items-baseline justify-between gap-x-4 text-sm">
+                <span class="font-quote italic opacity-80">{p.caption}</span>
+                <a
+                  href={p.file}
+                  download
+                  class="inline-flex min-h-11 items-center gap-1.5 text-xs tracking-[0.18em] uppercase underline underline-offset-4 print:hidden"
+                >
+                  Download hi-res
+                  <Download class="size-3.5 mt-1" aria-hidden="true" />
+                </a>
+              </figcaption>
+            </figure>
+          ))}
+        </div>
+        <p class="font-quote mt-6 text-base italic opacity-80 print:hidden">
+          All 8 photos ship inside the press-kit .zip above.
+        </p>
+      </section>
+    </div>
+  </main>
+</Layout>
