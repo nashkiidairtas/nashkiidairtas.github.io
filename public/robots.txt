@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /downloads/
+
+Sitemap: https://nashkiidairtas.github.io/sitemap-index.xml

@@ -12,7 +12,24 @@ interface Props {
   description?: string
 }
 
-const { title = 'Nashkii Dairtas', description = '' } = Astro.props
+const {
+  title = site.name,
+  description = `${site.name} is a new electronic music project.`
+} = Astro.props
+
+const canonicalURL = new URL(Astro.url.pathname, Astro.site)
+const ogImageURL = new URL('/og.png', Astro.site)
+
+const sameAs = [...site.socials.map((s) => s.href), site.github]
+const structuredData = {
+  '@context': 'https://schema.org',
+  '@type': 'MusicGroup',
+  name: site.name,
+  url: Astro.site?.toString(),
+  genre: ['Electro', 'House', 'Future bass', 'Electropop'],
+  email: site.bookingEmail,
+  sameAs
+}
 
 const nav = [
   { label: 'About', href: '/#about' },
@@ -31,6 +48,25 @@ const nav = [
     <link rel="manifest" href="/manifest.json" />
     <meta name="generator" content={Astro.generator} />
     <meta name="description" content={description} />
+    <meta name="theme-color" content="#4a3b52" />
+    <link rel="canonical" href={canonicalURL} />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content={site.name} />
+    <meta property="og:url" content={canonicalURL} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={ogImageURL} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content={site.name} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImageURL} />
+    <script
+      type="application/ld+json"
+      set:html={JSON.stringify(structuredData)}
+    />
     <link
       rel="preload"
       href="/fonts/recursive-black.woff2"
@@ -54,6 +90,7 @@ const nav = [
           <a
             href="/"
             class="flex min-h-11 min-w-11 items-center justify-center"
+            title={site.name}
           >
             <NiiLogo class={'h-10 w-10 fill-peach'} />
           </a>
