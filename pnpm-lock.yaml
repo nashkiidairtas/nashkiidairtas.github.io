@@ -14,6 +14,9 @@ importers:
       astro:
         specifier: ^7.3.8
         version: 7.3.8(jiti@2.7.0)(yaml@2.9.1)
+      lucide-astro:
+        specifier: ^0.556.0
+        version: 0.556.0(astro@7.3.8(jiti@2.7.0)(yaml@2.9.1))
       sharp:
         specifier: ^0.35.5
         version: 0.35.5
@@ -1111,6 +1114,12 @@ packages:
   lru-cache@11.5.3:
     resolution: {integrity: sha512-U4N8FgzmWxc8k1VH8Kr6lQg18U7Fjvby6wXHVRX/ZZ7IwWbRMgrRbP0Wrb5q5NVinryp4SQampHKdvtecItxUg==}
     engines: {node: 20 || >=22}
+
+  lucide-astro@0.556.0:
+    resolution: {integrity: sha512-ugMjPb45AMfkLCaduNSbyy5NQEKvB1TxVVMmUS4S6L807PMESnX0Qp+DIKHjbyjJmPXOyLRbrzvR3YikTK7brg==}
+    deprecated: 'Deprecated: Use `@lucide/astro`'
+    peerDependencies:
+      astro: '>=2.7.1'
 
   magic-string@0.30.21:
     resolution: {integrity: sha512-vd2F4YUyEXKGcLHoq+TEyCjxueSeHnFxyyjNp80yg0XV4vUhnDer/lvvlqM/arB5bXQN5K2/3oinyCRyx8T2CQ==}
@@ -2487,6 +2496,10 @@ snapshots:
       lightningcss-win32-x64-msvc: 1.33.0
 
   lru-cache@11.5.3: {}
+
+  lucide-astro@0.556.0(astro@7.3.8(jiti@2.7.0)(yaml@2.9.1)):
+    dependencies:
+      astro: 7.3.8(jiti@2.7.0)(yaml@2.9.1)
 
   magic-string@0.30.21:
     dependencies:
