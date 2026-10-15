@@ -1,29 +1,105 @@
 ---
+import { site } from '../data/site'
 import '../styles/global.css'
+
+import NiiLogo from '../assets/nii.svg'
+import shift6 from '../assets/shift-6.webp'
 
 interface Props {
   title?: string
   description?: string
 }
 
-const {
-  title = 'Nashkii Dairtas',
-  description = 'Nashkii Dairtas Official Website'
-} = Astro.props
+const { title = 'Nashkii Dairtas', description = '' } = Astro.props
+
+const nav = [
+  { label: 'About', href: '/#about' },
+  { label: 'Releases', href: '/#releases' },
+  { label: 'Contact', href: '/#contact' }
+]
 ---
 
 <!doctype html>
-<html lang="id">
+<html lang="en" class="bg-plum-deep scroll-smooth">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <link rel="icon" href="/favicon.ico" />
+    <link rel="icon" href="/favicon.ico" sizes="any" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/manifest.json" />
     <meta name="generator" content={Astro.generator} />
     <meta name="description" content={description} />
+    <link
+      rel="preload"
+      href="/fonts/recursive-black.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <link
+      rel="preload"
+      href="/fonts/fogtwo-no5.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
     <title>{title}</title>
   </head>
-  <body>
+  <body class="relative">
+    <header class="bg-plum text-peach print:hidden absolute w-full">
+      <div class="mx-auto flex max-w-7xl flex-wrap justify-center sm:justify-between items-center gap-x-4 sm:gap-x-8 gap-y-2 px-5 py-3 sm:px-10">
+        <div class="max-sm:w-full flex justify-center">
+          <a href="/" class="w-10">
+            <NiiLogo class={'h-10 w-10 fill-peach'} />
+          </a>
+        </div>
+        <nav aria-label="Primary">
+          <ul class="flex flex-wrap justify-center gap-x-2 sm:gap-x-6 gap-y-3 text-xs tracking-[0.14em] uppercase">
+            {nav.map((item) => (
+              <li>
+                <a href={item.href} class="underline-offset-4 hover:underline">
+                  {item.label}
+                </a>
+              </li>
+            ))}
+            <!-- TODO: EPK -->
+            <!-- <li>
+              <a
+                href="/epk"
+                class="border border-peach px-2 py-0.5 hover:bg-peach hover:text-plum"
+              >
+                EPK
+              </a>
+            </li> -->
+          </ul>
+        </nav>
+      </div>
+    </header>
+
     <slot />
+
+    <footer class="bg-plum-deep text-peach print:hidden">
+      <div class="mx-auto max-w-7xl px-5 py-14 md:px-10">
+        <p
+          class="font-logo text-transparent text-[13vw] leading-[0.85] font-black tracking-tight md:text-[7rem] bg-clip-text bg-cover bg-center"
+          style={`background-image: url(${shift6.src});`}
+        >
+          {site.name}
+        </p>
+        <div class="mt-10 flex flex-wrap items-end justify-between gap-x-10 gap-y-6 text-xs tracking-[0.14em] uppercase">
+          <ul class="flex flex-wrap gap-x-6 gap-y-2">
+            <li>
+              <a href={site.github} class="underline-offset-4 hover:underline">
+                GitHub
+              </a>
+            </li>
+          </ul>
+          <p class="opacity-70">
+            <span class="font-sans font-bold">&copy; </span>
+            2026 {site.name} — All signals reserved
+          </p>
+        </div>
+      </div>
+    </footer>
   </body>
 </html>

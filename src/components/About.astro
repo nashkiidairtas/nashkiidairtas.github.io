@@ -1,0 +1,58 @@
+---
+import { Image } from 'astro:assets'
+import shift0 from '../assets/shift-0.webp'
+import shift7 from '../assets/shift-7.webp'
+import { site } from '../data/site'
+---
+
+<section id="about">
+  <!-- <div class="mx-auto max-w-7xl px-5 pt-16 md:px-10 md:pt-24">
+    <h2 class="font-display mt-2 text-[16vw] leading-[0.9] md:text-[7.5rem]">
+      About
+    </h2>
+  </div> -->
+
+  <div class="grid grid-cols-1 md:grid-cols-2">
+    <div class="flex items-center px-5 py-14 md:min-h-[50vh] md:p-14">
+      <p class="max-w-xl text-base leading-relaxed md:text-lg">
+        {site.shortBio}
+      </p>
+    </div>
+
+    <figure class="relative md:min-h-[50vh]">
+      <Image
+        src={shift0}
+        alt="Open field with trees"
+        loading="lazy"
+        class="aspect-4/3 w-full object-cover md:aspect-auto md:h-full"
+      />
+      <!-- <figcaption class="font-quote absolute bottom-5 left-4 origin-bottom-left scale-y-[10] text-3xl text-paper md:bottom-6 md:left-6 md:text-5xl">
+        The field behind the estate
+      </figcaption> -->
+    </figure>
+
+    <figure class="relative md:min-h-[50vh] order-4 md:order-3">
+      <Image
+        src={shift7}
+        alt="Dark empty road"
+        loading="lazy"
+        class="aspect-4/3 w-full object-cover md:aspect-auto md:h-full"
+      />
+      <!-- <figcaption class="font-quote text-right absolute top-5 right-4 origin-top-right scale-y-[10] text-3xl text-paper md:bottom-6 md:left-6 md:text-5xl">
+        road with no one on it
+      </figcaption> -->
+    </figure>
+
+    <div class="flex items-center px-5 py-14 md:min-h-[50vh] md:p-14 order-3 md:order-4">
+      <blockquote>
+        <p class="font-quote text-2xl leading-snug italic md:text-[1.7rem]">
+          “Loops that refuse to resolve — low frequencies that arrive before the
+          melody does.”
+        </p>
+        <cite class="mt-4 block text-xs tracking-[0.18em] uppercase not-italic opacity-70">
+          — working notes
+        </cite>
+      </blockquote>
+    </div>
+  </div>
+</section>

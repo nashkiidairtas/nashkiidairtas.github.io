@@ -1,0 +1,36 @@
+---
+import { site } from '../data/site'
+---
+
+<section id="releases">
+  <div class="mx-auto max-w-7xl px-5 py-16 md:px-10 md:py-24">
+    <h2 class="font-display mt-2 text-[16vw] leading-[0.9] md:text-[7.5rem]">
+      Releases
+    </h2>
+    <p class="font-quote mt-4 max-w-md text-lg italic">
+      forthcoming, no fixed date
+    </p>
+
+    <ol class="mt-12 border-b border-plum/40">
+      {site.releases.map((r) => (
+        <li class="grid grid-cols-12 items-baseline gap-x-4 gap-y-1 border-t border-plum/40 py-6">
+          <p class="col-span-2 text-xs tracking-[0.22em] uppercase opacity-70 md:col-span-1">
+            {r.no}
+          </p>
+          <h3 class="font-display col-span-10 text-3xl leading-none md:col-span-5 md:text-5xl">
+            {r.title}
+          </h3>
+          <p class="col-span-6 col-start-3 text-xs tracking-[0.18em] uppercase md:col-span-3 md:col-start-7">
+            {r.format}
+          </p>
+          <p class="col-span-6 text-right text-xs tracking-[0.18em] uppercase md:col-span-3 md:text-left">
+            {r.year}
+          </p>
+          <p class="font-quote col-span-10 col-start-3 mt-1 text-base italic opacity-80 md:col-span-5 md:col-start-2">
+            {r.note}
+          </p>
+        </li>
+      ))}
+    </ol>
+  </div>
+</section>

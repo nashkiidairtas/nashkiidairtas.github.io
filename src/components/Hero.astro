@@ -1,0 +1,64 @@
+---
+import { Image } from 'astro:assets'
+import shift1 from '../assets/shift-1.webp'
+import shift2 from '../assets/shift-2.webp'
+---
+
+<section class="bg-plum text-peach min-h-screen flex">
+  <div class="m-auto max-w-7xl py-32 px-5 md:px-10">
+    <div class="mt-6 grid grid-cols-12 items-end gap-y-10 md:mt-2">
+      <h1 class="col-span-12 font-logo leading-[0.85] font-black tracking-tight md:col-span-8 z-1 text-shadow-plum text-shadow-lg">
+        <span class="block text-[19vw] md:text-[14vw] lg:text-[11.5vw]">
+          Nashkii
+        </span>
+        <span
+          class="block text-[19vw] md:ml-[14%] md:text-[14vw] lg:text-[11.5vw]"
+          aria-label="Dairtas"
+        >
+          Dairtas
+        </span>
+      </h1>
+
+      <figure class="col-span-10 col-start-3 md:col-span-4 md:col-start-9 md:-ml-16">
+        <Image
+          src={shift2}
+          alt="Night street with light trails"
+          widths={[480, 800]}
+          sizes="(max-width: 768px) 80vw, 33vw"
+          loading="eager"
+          fetchpriority="high"
+          class="aspect-4/3 w-full object-cover"
+        />
+        <!-- <figcaption class="font-quote mt-2 text-sm italic opacity-80">
+          light trails, after midnight
+        </figcaption> -->
+      </figure>
+    </div>
+
+    <div class="mt-10 grid grid-cols-12 items-start gap-y-8 md:mt-4">
+      <figure class="col-span-8 col-start-1 md:col-span-3 md:col-start-2 md:-mt-24">
+        <Image
+          src={shift1}
+          alt="Close-up of leaves"
+          widths={[360, 640]}
+          sizes="(max-width: 768px) 65vw, 25vw"
+          loading="eager"
+          class="aspect-square w-full object-cover"
+        />
+        <!-- <figcaption class="font-quote mt-2 text-sm italic opacity-80">
+          leaves, unlit
+        </figcaption> -->
+      </figure>
+
+      <!-- TODO -->
+      <p class="col-span-12 max-w-md text-sm leading-relaxed md:col-span-4 md:col-start-8 md:pt-10">
+        Slow, heavy abstractions assembled from night-street recordings, tape
+        hiss and detuned machines — documented in sound, and in image.
+      </p>
+    </div>
+
+    <div class="mt-14 flex items-center justify-end pt-4 text-[11px] tracking-[0.22em] uppercase opacity-80">
+      <p>Est. MMXXVI</p>
+    </div>
+  </div>
+</section>

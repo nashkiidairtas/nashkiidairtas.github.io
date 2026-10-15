@@ -1,0 +1,76 @@
+---
+import { Image } from 'astro:assets'
+import shift3 from '../assets/shift-3.webp'
+import shift4 from '../assets/shift-4.webp'
+import { site } from '../data/site'
+---
+
+<section id="contact">
+  <div class="mx-auto max-w-7xl px-5 pt-10 md:px-10">
+    <div class="grid grid-cols-12 items-end gap-y-8">
+      <div class="col-span-12 md:col-span-7 order-2 md:order-1">
+        <h2 class="font-display mt-2 text-[13vw] leading-[0.9] md:text-[6.5rem]">
+          Contact
+          <!-- Booking &amp; <span class="text-plum">press</span> -->
+        </h2>
+      </div>
+      <figure class="col-span-8 col-start-5 md:col-span-5 order-1 md:order-2">
+        <Image
+          src={shift4}
+          alt="City street with shops and motorbikes at dusk"
+          loading="lazy"
+          class="aspect-square lg:aspect-4/3 w-full object-cover"
+        />
+      </figure>
+    </div>
+
+    <div class="mt-10 grid grid-cols-12 gap-y-10">
+      <div class="col-span-12 md:col-span-7">
+        <p class="text-xs tracking-[0.22em] uppercase opacity-70">
+          Direct line
+        </p>
+        <a
+          href={`mailto:${site.bookingEmail}`}
+          class="font-logo mt-3 block text-xl sm:text-2xl font-bold break-all underline-offset-8 hover:underline md:text-2xl lg:text-4xl"
+        >
+          {site.bookingEmail}
+        </a>
+      </div>
+
+      <div class="col-span-12 md:col-span-5">
+        <p class="text-xs tracking-[0.22em] uppercase opacity-70">Elsewhere</p>
+        <ul class="mt-3 space-y-2 text-sm tracking-[0.14em] uppercase">
+          {site.socials.map((s) => (
+            <li>
+              <a
+                href={s.href}
+                class="underline-offset-4 hover:underline"
+                target="_blank"
+              >
+                {s.label} ↗
+              </a>
+            </li>
+          ))}
+        </ul>
+        <!-- <a
+          href="/epk"
+          class="mt-8 inline-block border border-plum px-5 py-3 text-xs tracking-[0.22em] uppercase hover:bg-plum hover:text-peach"
+        >
+          Open the EPK
+        </a> -->
+      </div>
+    </div>
+  </div>
+
+  <figure class="mt-12">
+    <Image
+      src={shift3}
+      alt="City street"
+      loading="lazy"
+      class="aspect-4/3 lg:aspect-video xl:aspect-20/9 w-full object-cover"
+    />
+    <!-- <figcaption class="font-quote mt-2 text-sm italic opacity-70">
+        sleeve material
+      </figcaption> -->
+  </figure>
+</section>
