@@ -6,6 +6,8 @@ export const site = {
 
   bookingEmail: bookingEmail,
 
+  epkSite: "https://nashkiidairtas.github.io/epk",
+
   github: "https://github.com/nashkiidairtas",
 
   socials: [
